@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+  let name = document.getElementById("name").value;
+  let psw = document.getElementById("psw").value;
+
+  document.getElementById("perr").innerHTML = "";
+  document.getElementById("nerr").innerHTML = "";
+
+  if (name === "") {
+    document.getElementById("nerr").innerHTML = "Username requiered";
+    return false;
+  }
+  if (psw === "") {
+    document.getElementById("perr").innerHTML = "Password Reqiuied";
+    return false;
+  }
+  alert("Successful Login");
+  return true;
+}
+
+    </script>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>FORM</h1>
+        <form onsubmit="return validateForm()">
+            <label for="">UserName: </label>
+            <input type="text" id="name"><br>     
+           <span id="nerr"></span><br><br>
+
+            <label for="">Password</label>
+            <input type="password" name="" id="psw"><br><br>
+            <span id="perr"></span>
+            <br><br><br>
+            <button type="submit">Login</button>
+
+        </form>
+    </center>
+</body>
+</html>
